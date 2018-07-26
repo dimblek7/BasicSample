@@ -37,8 +37,10 @@ jobs:
     working_directory: ~/repo/android
     docker:
       - image: circleci/android:api-25-alpha
-      version: 2
-      build-deploy:
+    environment:
+      JVM_OPTS: -Xmx4G
+    steps:
+     version: 2
       jobs:
         - build
         - deploy-develop:
@@ -48,9 +50,6 @@ jobs:
             filters:
               branches:
                 only: develop
-    environment:
-      JVM_OPTS: -Xmx4G
-    steps:
       - checkout
       - run: echo "Mirkelam is working for you 👯"
       - restore_cache:
@@ -69,9 +68,4 @@ jobs:
           path: app/build/outputs/apk/
           destination: apks/
       
-  
-
-
-
-
-
+ 
