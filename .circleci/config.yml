@@ -40,7 +40,6 @@ jobs:
     environment:
       JVM_OPTS: -Xmx4G
     steps:
-     version: 2
       jobs:
         - build
         - deploy-develop:
