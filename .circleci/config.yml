@@ -45,10 +45,6 @@ jobs:
         - deploy-develop:
             requires:
               - build
-            context: develop
-            filters:
-              branches:
-                only: develop
       - checkout
       - run: echo "Mirkelam is working for you 👯"
       - restore_cache:
