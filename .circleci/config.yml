@@ -42,7 +42,7 @@ jobs:
           path: ~/repo
       - attach_workspace:
           at: ~/repo
-      -run: react-native run-android
+      - run: react-native run-android
       
   
 
