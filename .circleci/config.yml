@@ -40,11 +40,6 @@ jobs:
     environment:
       JVM_OPTS: -Xmx4G
     steps:
-      jobs:
-        - build
-        - deploy-develop:
-            requires:
-              - build
       - checkout
       - run: echo "Mirkelam is working for you 👯"
       - restore_cache:
